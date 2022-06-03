@@ -1,0 +1,45 @@
+package com.h2;
+
+
+
+import java.util.Map;
+import java.util.Scanner;
+
+public class BestLoanRates {
+
+    private static int loanTermInYears;
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter your name");
+        String name = "Hello " + scanner.nextLine();
+        System.out.println(name);
+
+        /*System.out.println("Enter the loan term (in years)");
+        scanner.nextInt(loanTermInYears);
+        getRates(loanTermInYears);
+        float getRate = getRates(loanTermInYears);
+        if (getRate == 0.0f) {
+            System.out.println("No available rates for term: " + loanTermInYears + " years");
+        }
+        else {
+            System.out.println("Best Available Rate: " + getRates(loanTermInYears) + "%");
+        }
+        scanner.close();*/
+
+
+    }
+
+    public static final Map <Integer, Float> bestRates = Map.of(1, 5.50f, 2, 3.45f, 3, 2.67f);
+    public static Map<Integer, Float> getRates(int loanTermInYears) {
+        if (bestRates.containsValue(loanTermInYears)) {
+            return bestRates;
+        }
+    }
+
+
+
+
+}
